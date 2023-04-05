@@ -4,12 +4,6 @@ import { BsGithub } from 'react-icons/bs';
 
 export default function App({ Component, pageProps }) {
   return <>
-    {/* <Link href="/camera">Camera</Link>
-    <br></br>
-    <Link href="/screenshot">Screenshot</Link>
-    <br></br>
-    <Link href="/video">Video</Link> */}
-
     <header>
       <nav className='navbar'>
         <Link href="/">
