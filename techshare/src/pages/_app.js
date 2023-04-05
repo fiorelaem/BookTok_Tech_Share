@@ -22,6 +22,10 @@ export default function App({ Component, pageProps }) {
           <li>
             <Link href="/video"> Video</Link>
           </li>
+
+          <li>
+            <Link href="/mic"> Mic Recorder</Link>
+          </li>
         </ul>
 
         <ul className='navbar__icons'>
