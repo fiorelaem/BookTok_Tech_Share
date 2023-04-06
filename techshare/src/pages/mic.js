@@ -1,6 +1,9 @@
+// Code taken from https://www.assemblyai.com/blog/react-speech-recognition-with-react-hooks/
+// with some slight modifications for our use in our tech share
+
+
 import MicRecorder from "mic-recorder-to-mp3"
 import { useEffect, useState, useRef } from "react"
-// import axios from "axios"
 
 const App = () => {
   // Mic-Recorder-To-MP3
@@ -50,7 +53,6 @@ const App = () => {
         <button disabled={!isRecording} onClick={stopRecording}>
           STOP
         </button>
-        <button>SUBMIT</button>
       </div>
     </div>
   )

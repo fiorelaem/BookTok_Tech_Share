@@ -1,3 +1,6 @@
+// Code taken from https://blog.openreplay.com/capture-real-time-images-and-videos-with-react-webcam/
+// with some slight modifications for our use in our tech share
+
 import React, { useCallback, useRef, useState } from "react";
 import Webcam from "react-webcam";
 
