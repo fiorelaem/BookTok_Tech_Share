@@ -32,11 +32,13 @@ function WebcamImage() {
             screenshotFormat="image/jpeg"
             videoConstraints={videoConstraints}
           />
+          <br></br>
           <button onClick={capture}>Capture photo</button>
         </>
       ) : (
         <>
           <img src={img} alt="screenshot" />
+          <br></br>
           <button onClick={() => setImg(null)}>Retake</button>
         </>
       )}
