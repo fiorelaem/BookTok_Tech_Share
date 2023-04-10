@@ -20,10 +20,12 @@ function WebcamImage() {
   }, [webcamRef]);
 
   return (
-    <div className="centered">
-      <h1>Screenshot</h1>
+    <div>
+      <h1 class='centered'>Screenshot</h1>
+      
       {img === null ? (
         <>
+        <div class='Webcam'>
           <Webcam
             audio={false}
             mirrored={true}
@@ -33,16 +35,24 @@ function WebcamImage() {
             screenshotFormat="image/jpeg"
             videoConstraints={videoConstraints}
           />
-          <br></br>
+        </div>
+        <br></br>
+        <div  class='centered'>
           <button onClick={capture}>Capture photo</button>
+        </div>
         </>
       ) : (
         <>
+        <div class='Webcam'>
           <img src={img} alt="screenshot" />
+        </div>
           <br></br>
+        <div  class='centered'> 
           <button onClick={() => setImg(null)}>Retake</button>
+        </div>
         </>
       )}
+      
     </div>
   );
 }
