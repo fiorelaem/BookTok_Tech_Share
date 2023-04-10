@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }) {
           </li>
 
           <li>
-            <Link href="/dual-camera"> Front & Back Camera</Link>
+            <Link href="/dual-camera"> Back Camera</Link>
           </li>
         </ul>
 
