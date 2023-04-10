@@ -18,13 +18,13 @@ export default function BackCamera() {
 
     if(camera == true){
         videoConstraints = {
-            width: 400,
+            width: 350,
             height: 400,
             facingMode: "environment",
           };    
     } else {
         videoConstraints = {
-            width: 400,
+            width: 350,
             height: 400,
             facingMode: "user",
           };
@@ -38,11 +38,15 @@ export default function BackCamera() {
 
     return (
         <div class='centered'>
-            <Webcam 
-                mirrored={false}
-                videoConstraints={videoConstraints}
-            />
-
+            <h1>Front & Back Camera</h1>
+            <h4>*will only work on devices with two cameras (e.g. a phone).</h4>
+             <div class='Webcam'>
+                <Webcam 
+                    mirrored={false}
+                    videoConstraints={videoConstraints}
+                />
+            </div>
+            <br></br>
             {/* 
             ternary operator is used (conditon ? true : false)
             if camera is true, show front camera
