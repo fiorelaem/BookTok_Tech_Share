@@ -88,11 +88,10 @@ export default function WebcamVideo() {
   return (
     <div class = 'centered'>
       <h1>Video</h1>
-      
       <div class='Webcam'>
         <Webcam
           height={400}
-          width={400}
+          width={350}
           audio={false}
           mirrored={true}
           ref={webcamRef}

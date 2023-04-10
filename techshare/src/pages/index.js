@@ -12,7 +12,7 @@ export default function Home() {
     <div  class = 'centered'>
       <br></br>
       <br></br><br></br><br></br><br></br>
-      <h1>Welcome to our tech share!!</h1>
+      <h1>Welcome to our tech share!</h1>
     </div>
       {/* <Head>
         <title>Create Next App</title>
