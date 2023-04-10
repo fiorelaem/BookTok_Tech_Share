@@ -21,19 +21,24 @@ function WebcamImage() {
   }, [webcamRef]);
 
   return (
-    <div className="Container">
-      <div className="CameraContainer">
+    <div className="centered">
+      <h1>Screenshot</h1>
+      <div className="Webcam">
         <Webcam
           mirrored={true}
           videoConstraints={videoConstraints}
           ref={webcamRef}
           screenshotFormat="image/jpeg"
         />
-        <button onClick={capture}>Capture photo</button> 
       </div>
-      {img && (
-          <img src={img} alt="capturedPhoto"/>
-      )}
+      <br></br>
+      <button onClick={capture}>Capture photo</button> 
+      
+      <div className="Webcam">
+        {img && (
+            <img src={img} alt="capturedPhoto"/>
+        )}
+      </div>
     </div> 
   );
 }

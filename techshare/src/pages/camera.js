@@ -9,11 +9,14 @@ function WebCamera() {
   };
 
   return (
-    <div className='Webcam'>
-      <Webcam 
-        mirrored={true}
-        videoConstraints={videoConstraints}
-      />
+    <div class='centered'>
+      <h1>Webcam</h1>
+      <div className='Webcam'>
+        <Webcam 
+          mirrored={true}
+          videoConstraints={videoConstraints}
+        />
+      </div>
     </div>
   );
 }
