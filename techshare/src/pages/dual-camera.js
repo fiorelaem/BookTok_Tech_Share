@@ -38,7 +38,7 @@ export default function BackCamera() {
 
     return (
         <div class='centered'>
-            <h1>Front & Back Camera</h1>
+            <h1>Camera Modes</h1>
             <h4>*will only work on devices with two cameras (e.g. a phone).</h4>
              <div class='Webcam'>
                 <Webcam 
