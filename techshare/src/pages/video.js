@@ -5,20 +5,26 @@ import React, { useCallback, useRef, useState } from "react";
 import Webcam from "react-webcam";
 
 export default function WebcamVideo() {
-
-  // These values persist b/w renders. 
+  // -------------------------------------------------------------------------
+  // These values persist b/w renders. Used to keep track of previous state values.
   // mediaRecorderRef used to capture video data
+  // -------------------------------------------------------------------------
   const webcamRef = useRef(null);
   const mediaRecorderRef = useRef(null);
 
+
+  // -------------------------------------------------------------------------
   // capturing is initialized to boolean value false 
-  const [capturing, setCapturing] = useState(false);
   // initialize recordedChunks to an empty array
+  // -------------------------------------------------------------------------
+  const [capturing, setCapturing] = useState(false);
   const [recordedChunks, setRecordedChunks] = useState([]);
 
 
+  // -------------------------------------------------------------------------
   // arrow function with data parameter is used to update
   // recordedChunks with video data
+  // -------------------------------------------------------------------------
   const handleDataAvailable = useCallback(
     ({ data }) => {
       if (data.size > 0) {
@@ -28,13 +34,17 @@ export default function WebcamVideo() {
     [setRecordedChunks]
   );
 
+
+  // -------------------------------------------------------------------------
   // use the MediaStream Recording API to capture data captured by a MediaStream
   // (interface that represents a stream of media content i.e. a video)
 
-  // 1. MediaRecorder object is created by telling it the source stream
-  //    mimeType is a read-only property specifying the media type (a video in this case)
-  // 2. set event handler so that it gets called when new data is available 
-  // 3. start() is called to begin recording
+  // 1. capturing is set to true
+  // 2. MediaRecorder object is created by telling it the source stream
+  //      - mimeType is a read-only property specifying the media type (a video in this case)
+  // 3. set event handler so that it gets called when new data is available 
+  // 4. start() is called to begin recording
+  // -------------------------------------------------------------------------
   const handleStartCaptureClick = useCallback(() => {
     setCapturing(true);
     mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
@@ -48,19 +58,28 @@ export default function WebcamVideo() {
   }, [webcamRef, setCapturing, mediaRecorderRef, handleDataAvailable]);
 
 
+  // -------------------------------------------------------------------------
   // 1. stop() is called to stop recording
   // 2. capturing is set to false through setCapturing function
+  // -------------------------------------------------------------------------
   const handleStopCaptureClick = useCallback(() => {
     mediaRecorderRef.current.stop();
     setCapturing(false);
   }, [mediaRecorderRef, setCapturing]);
 
 
+  // -------------------------------------------------------------------------
   // 1. to download video, first check if there's a video to download
-  // 2. create a BLOB object with parameter recordedChuncks (must be an array)
+  // 2. create a BLOB object (file-like object of raw data) with parameter recordedChunks (must be an array)
+  //       - returns blob object that's a concatenation of the recordedChunks array
   // 3. create a string url that represents BLOB object
   // 4. download the video
-  // 5. set recordedChunks to an empty array
+  // 5. release url since a new one is created each time (memory management)
+  // 6. set recordedChunks to an empty array
+
+  // this process of packaging up the video data for download would be very 
+  // similar to packaging up the data to send to a server
+  // -------------------------------------------------------------------------
   const handleDownload = useCallback(() => {
     if (recordedChunks.length) {
       const blob = new Blob(recordedChunks, {
@@ -84,7 +103,9 @@ export default function WebcamVideo() {
     facingMode: "user",
   };
 
-
+  // -------------------------------------------------------------------------
+  // return webcam along with three possible buttons (start, stop, download)
+  // -------------------------------------------------------------------------
   return (
     <div class = 'centered'>
       <h1>Video</h1>
