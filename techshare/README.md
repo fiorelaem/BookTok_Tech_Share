@@ -25,7 +25,16 @@ Our tech share used the following sources:
 - [React Speech Recognition with React Hooks](https://www.assemblyai.com/blog/react-speech-recognition-with-react-hooks/)
 
 
-## Quick Intro to React Hooks Used
+## Quick Summary of React Hooks Used
+
+### [useRef](https://react.dev/reference/react/useRef)
+
+```bash
+const ref = useRef(initialValue)
+```
+- allows you to persist values between renders
+- returns only an object called current
+- changing a ref does not trigger a re-render
 
 ### [useCallback](https://react.dev/reference/react/useCallback)
 
@@ -37,3 +46,4 @@ const cachedFn = useCallback(fn, dependencies)
 - used to optimize performance
 - React doesn't call the function. The function is returned to you so you can call it whenever you want. 
 - dependencies are all the reactive values (props, state, variables, and functions) referenced inside the fn code
+
