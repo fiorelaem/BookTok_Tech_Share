@@ -1,13 +1,24 @@
-import React from 'react';
 import Webcam from "react-webcam";
 
-export default function WebCamera() {
+function WebCamera() {
+
+  const videoConstraints = {
+    width: 400,
+    height: 400,
+    facingMode: "user",
+  };
+
   return (
-    <div className='Webcam'>
-      <Webcam 
-      // height={800}
-      />
+    <div class='centered'>
+      <h1>Webcam</h1>
+      <div className='Webcam'>
+        <Webcam 
+          mirrored={true}
+          videoConstraints={videoConstraints}
+        />
+      </div>
     </div>
   );
 }
 
+export default WebCamera;

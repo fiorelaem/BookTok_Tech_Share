@@ -20,6 +20,10 @@ export default function App({ Component, pageProps }) {
           </li>
 
           <li>
+            <Link href="/dual-camera"> Camera Modes</Link>
+          </li>
+
+          <li>
             <Link href="/video"> Video</Link>
           </li>
 
@@ -30,7 +34,7 @@ export default function App({ Component, pageProps }) {
 
         <ul className='navbar__icons'>
           <li>
-            <a href="https://github.com/csci5117s23/ReactWebcamTechShare"><BsGithub /></a>
+            <a href="https://github.com/fiorelaem/BookTok_Tech_Share"><BsGithub /></a>
           </li>
         </ul>
       </nav>
