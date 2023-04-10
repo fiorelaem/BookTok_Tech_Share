@@ -20,15 +20,15 @@ export default function App({ Component, pageProps }) {
           </li>
 
           <li>
+            <Link href="/dual-camera"> Camera Modes</Link>
+          </li>
+
+          <li>
             <Link href="/video"> Video</Link>
           </li>
 
           <li>
             <Link href="/mic"> Mic Recorder</Link>
-          </li>
-
-          <li>
-            <Link href="/dual-camera"> Camera Modes</Link>
           </li>
         </ul>
 
