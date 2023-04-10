@@ -20,7 +20,8 @@ function WebcamImage() {
   }, [webcamRef]);
 
   return (
-    <div className="Container">
+    <div className="centered">
+      <h1>Screenshot</h1>
       {img === null ? (
         <>
           <Webcam
