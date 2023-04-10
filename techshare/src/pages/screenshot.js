@@ -1,7 +1,8 @@
 // Code taken from https://blog.openreplay.com/capture-real-time-images-and-videos-with-react-webcam/
 // with some slight modifications for our use in our tech share
 
-import React, { useCallback, useRef, useState } from "react";
+
+import { useCallback, useRef, useState } from "react";
 import Webcam from "react-webcam";
 
 function WebcamImage() {
@@ -20,30 +21,20 @@ function WebcamImage() {
   }, [webcamRef]);
 
   return (
-    <div className="centered">
-      <h1>Screenshot</h1>
-      {img === null ? (
-        <>
-          <Webcam
-            audio={false}
-            mirrored={true}
-            height={400}
-            width={400}
-            ref={webcamRef}
-            screenshotFormat="image/jpeg"
-            videoConstraints={videoConstraints}
-          />
-          <br></br>
-          <button onClick={capture}>Capture photo</button>
-        </>
-      ) : (
-        <>
-          <img src={img} alt="screenshot" />
-          <br></br>
-          <button onClick={() => setImg(null)}>Retake</button>
-        </>
+    <div className="Container">
+      <div className="CameraContainer">
+        <Webcam
+          mirrored={true}
+          videoConstraints={videoConstraints}
+          ref={webcamRef}
+          screenshotFormat="image/jpeg"
+        />
+        <button onClick={capture}>Capture photo</button> 
+      </div>
+      {img && (
+          <img src={img} alt="capturedPhoto"/>
       )}
-    </div>
+    </div> 
   );
 }
 
