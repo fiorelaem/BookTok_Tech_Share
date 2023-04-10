@@ -62,8 +62,15 @@ a{
 }
 .Captured{
   padding-top: 50px;
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+}
+.centered{
+  text-align: center;
+  margin: auto;
+  width: 20%;
+  /* border: 3px solid green; */
+  /* padding: 10px; */
 }
 
 @media screen and (max-width: 768px){

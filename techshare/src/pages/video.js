@@ -86,7 +86,8 @@ export default function WebcamVideo() {
 
 
   return (
-    <div className="Container">
+    <div class = 'centered'>
+      <h1>Video</h1>
       <Webcam
         height={400}
         width={400}
